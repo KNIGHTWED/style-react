@@ -38,7 +38,7 @@ yarn eject
 'sassRegex' 검색
 
 
-'''javascript
+```javascript
 test: sassRegex,
 exclude: sassModuleRegex,
 use: getStyleLoaders(
@@ -51,13 +51,13 @@ use: getStyleLoaders(
   }).concat({
     loader: require.resolve('sass-loader'),
     options: {
-      sassOptions: { // 원래는 options로만 감싸져 있었지만 sassOptions로 한번 더 감싸줘야 에러 안나옴.
-      includePaths: [paths.appSrc + '/styles'],
-      sourceMap: isEnvProduction && shouldUseSourceMap,
-      data: "@import 'utils';"
+      sassOptions: {
+        includePaths: [paths.appSrc + '/styles'],
+        sourceMap: isEnvProduction && shouldUseSourceMap,
+        data: "@import 'utils';"
     }
   }
 }),
-'''
+```
 
 **options** 안에 **sasOptions**로 한번 더 감싸줘야 failed to compile 안나오고 실행됨.

@@ -65,3 +65,18 @@ use: getStyleLoaders(
 
 data -> prependData -> **additionalData** 
 (출처 https://teserre.tistory.com/11)
+
+
+styled-components
+props 값으로 전달해 주는 값을 쉽게 스타일에 적용 가능
+
+```javascript
+const Button = styled.button`
+  background: ${props => props.color || 'blue'};
+  color: black;
+  border-radius: 4px;
+  font-size: 1rem;
+`;
+```
+예시로 위와 같은 코드를 작성할 수 있다.
+스타일 속성은 &#96; ... &#96; 으로 감싸줘야 한다.

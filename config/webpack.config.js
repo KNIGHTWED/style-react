@@ -521,9 +521,10 @@ module.exports = function (webpackEnv) {
                 loader: require.resolve('sass-loader'),
                 options: {
                   sassOptions: { // 원래는 options로만 감싸져 있었지만 sassOptions로 한번 더 감싸줘야 에러 안나옴.
-                    includePaths: [paths.appSrc + '/styles'],
+                    includePaths: [paths.appSrc + '/styles']
+                  },
                     sourceMap: isEnvProduction && shouldUseSourceMap,
-                  }
+                    additionalData: `@import 'utils';` // prependData -> additionalData
                 }
               }),
               // Don't consider CSS imports dead code even if the

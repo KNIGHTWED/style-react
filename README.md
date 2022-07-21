@@ -61,3 +61,4 @@ use: getStyleLoaders(
 ```
 
 **options** 안에 **sasOptions**로 한번 더 감싸줘야 failed to compile 안나오고 실행됨.
+출처 https://jsdev.kr/t/topic/5334

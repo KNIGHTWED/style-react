@@ -31,10 +31,10 @@ header는 클래스가 아닌 태그이기 때문에 .header라고 쓰지 않는
 
 
 ## Sass
-.sass와 .scss 확장자를 사용
+`.sass`와 `.scss` 확장자를 사용
 
-yarn eject
-실행 후 webpack.config.js 파일에서
+`yarn eject`
+실행 후 `webpack.config.js` 파일에서
 'sassRegex' 검색
 
 
@@ -54,7 +54,7 @@ use: getStyleLoaders(
       sassOptions: {
         includePaths: [paths.appSrc + '/styles'],
         sourceMap: isEnvProduction && shouldUseSourceMap,
-        data: "@import 'utils';"
+        additionalData: "@import 'utils';"
     }
   }
 }),
@@ -62,3 +62,5 @@ use: getStyleLoaders(
 
 **options** 안에 **sasOptions**로 한번 더 감싸줘야 failed to compile 안나오고 실행됨.
 출처 https://jsdev.kr/t/topic/5334
+
+data -> prependData -> **additionalData**
